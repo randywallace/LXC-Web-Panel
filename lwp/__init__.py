@@ -249,7 +249,7 @@ def get_container_settings(name):
     '''
     returns a dict of all utils settings for a container
     '''
-    filename = '/var/lib/lxc/%s/config' % name
+    filename = '/var/lib/docker/containers/%s/config' % name
     if not file_exist(filename):
         return False
     config = ConfigParser.SafeConfigParser()
@@ -372,7 +372,7 @@ def push_config_value(key, value, container=None):
             return values
 
     if container:
-        filename = '/var/lib/lxc/%s/config' % container
+        filename = '/var/lib/docker/containers/%s/config' % container
         save = save_cgroup_devices(filename=filename)
 
         config = ConfigParser.RawConfigParser()

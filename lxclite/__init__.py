@@ -93,7 +93,7 @@ def ls():
 
     Note: Directory mode for Ubuntu 12/13 compatibility
     '''
-    try: ct_list = os.listdir('/var/lib/lxc/')
+    try: ct_list = os.listdir('/var/lib/docker/containers/')
     except OSError: ct_list = []
     return sorted(ct_list)
 
